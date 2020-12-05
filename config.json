@@ -8,8 +8,8 @@
         "js" : "dist/bundle.js"
     },
     "toolName" : {
-        "human" :"Bluegenes GWAS Visualizer",
-        "cljs" :"bluegenesGWASVisualizer"    
+        "human" :"Bluegenes GWASResult Visualizer",
+        "cljs" :"bluegenesGWASResultVisualizer"    
     },
     "version": 2
 }

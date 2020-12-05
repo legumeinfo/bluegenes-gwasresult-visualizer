@@ -2,7 +2,7 @@
   "name": "@intermine/bluegenes-gwas-visualizer",
   "version": "2.0.0",
   "main": "src/index.js",
-  "description": "Displays a scatter plot of GWAS p-values on a GWAS report page.",
+  "description": "Displays a scatter plot of GWASResult p-values on a GWASResult report page.",
   "homepage": "http://www.intermine.org",
   "repository": {
     "type": "git",

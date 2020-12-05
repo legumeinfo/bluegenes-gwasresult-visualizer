@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>
-            Bluegenes GWAS Visualizer
+            Bluegenes GWASResult Visualizer
         </title>
 
         <!-- You can assume imjs is on the window.  -->
@@ -35,7 +35,7 @@
 
     <body>
         <div style="margin:auto; width:1178px; border:1px solid #ccc;">
-            <div class="bluegenesGWASVisualizer" id='yourDiv' />
+            <div class="bluegenesGWASResultVisualizer" id='yourDiv' />
             <script>
              window.onload = function() {
 	         //The element to attach the viewer to. Must be an existing DOM element
@@ -79,7 +79,7 @@
     	         // THIS LINE IS THE IMPORTANT BIT. YOU SHOULDN'T NEED TO EDIT IT
     	         // the method signature should match the signature in src/index.js
     	         $.ajax('config.json').then(function(config) {
-    		     bluegenesGWASVisualizer.main(
+    		     bluegenesGWASResultVisualizer.main(
     		         elem,
                          imURL,
                          dataToInitialiseToolWith,
