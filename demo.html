@@ -34,63 +34,61 @@
     </head>
 
     <body>
-        <div style="margin:auto; width:1178px; border:1px solid #ccc;">
-            <div class="bluegenesGWASResultVisualizer" id='yourDiv' />
-            <script>
-             window.onload = function() {
-	         //The element to attach the viewer to. Must be an existing DOM element
-    	         var elem = document.getElementById('yourDiv'),
-    		     //InterMine service, including URL and token.
-    		         imURL = {
-                             root: 'https://mines.legumeinfo.org/soymine/',
-    			     //could include token here too if we had one
-    		         },
-    		     //this is an example of data that could be passed to this tool be BlueGenes
-    	         //in reality (outside the demo) this would be dynamic and not hard-coded
-    	         // to an ID.
-    		         dataToInitialiseToolWith = {
-                             'GWASResult': {
-                                 class: 'GWASResult',
-                                 format: 'ids',
-                                 // plant height from several GWAS
-                                 value: [
-                                     14000090, 14000093, 14000095, 14000201, 14000203, 14000205, 14000207,
-                                     14000209, 14000211, 14000213, 14000215, 14000217, 14000219, 14000221,
-                                     14000223, 14000225, 14000227, 14000229, 14000231, 14000233, 14000235,
-                                     14000237, 14000239, 14000241, 14000243, 14000245, 14000247, 14000249,
-                                     14000251, 14000253, 14000502, 14001020, 14001022, 14001023, 14001024,
-                                     14001026, 14001027, 14001029, 14001031, 14001032, 14001726, 14001727,
-                                     14001728, 14001729, 14001730, 14001731, 14001732, 14001733, 14001734,
-                                     14001735, 14001736, 14001737, 14001738, 14001739, 14001740, 14001741,
-                                     14001742, 14001743, 14001744, 14001745, 14001746, 14001747, 14001748,
-                                     14001749, 14001750, 14001751, 14001752
-                                 ]
-                             }
-    		         },
-    		     toolState = {}, //to be confirmed how we use this.
-                     navigate = function(type, data, mine) {
-                         // Helpful console message when calling navigate function.
-                         var someMine = mine ? "on ".concat(mine) : null;
-                         var msg = ["Navigating to", type, someMine, "with data:"]
-                             .filter(function(e) { return e }) // remove falsy elements
-                             .join(" ");
-                         console.log(msg, data);
-                     };
-    	         // THIS LINE IS THE IMPORTANT BIT. YOU SHOULDN'T NEED TO EDIT IT
-    	         // the method signature should match the signature in src/index.js
-    	         $.ajax('config.json').then(function(config) {
-    		     bluegenesGWASResultVisualizer.main(
-    		         elem,
-                         imURL,
-                         dataToInitialiseToolWith,
-                         toolState,
-                         config,
-                         navigate
-                     );
-    	         });
-             };
-            </script>
-            <script src="dist/bundle.js"></script>
-        </div>
+        <div class="bluegenesGWASResultVisualizer" id='yourDiv' />
+        <script>
+         window.onload = function() {
+	     //The element to attach the viewer to. Must be an existing DOM element
+    	     var elem = document.getElementById('yourDiv'),
+    		 //InterMine service, including URL and token.
+    		     imURL = {
+                         root: 'https://mines.legumeinfo.org/soymine/',
+    			 //could include token here too if we had one
+    		     },
+    		 //this is an example of data that could be passed to this tool be BlueGenes
+    	     //in reality (outside the demo) this would be dynamic and not hard-coded
+    	     // to an ID.
+    		     dataToInitialiseToolWith = {
+                         'GWASResult': {
+                             class: 'GWASResult',
+                             format: 'ids',
+                             // plant height from several GWAS
+                             value: [
+                                 14000090, 14000093, 14000095, 14000201, 14000203, 14000205, 14000207,
+                                 14000209, 14000211, 14000213, 14000215, 14000217, 14000219, 14000221,
+                                 14000223, 14000225, 14000227, 14000229, 14000231, 14000233, 14000235,
+                                 14000237, 14000239, 14000241, 14000243, 14000245, 14000247, 14000249,
+                                 14000251, 14000253, 14000502, 14001020, 14001022, 14001023, 14001024,
+                                 14001026, 14001027, 14001029, 14001031, 14001032, 14001726, 14001727,
+                                 14001728, 14001729, 14001730, 14001731, 14001732, 14001733, 14001734,
+                                 14001735, 14001736, 14001737, 14001738, 14001739, 14001740, 14001741,
+                                 14001742, 14001743, 14001744, 14001745, 14001746, 14001747, 14001748,
+                                 14001749, 14001750, 14001751, 14001752
+                             ]
+                         }
+    		     },
+    		 toolState = {}, //to be confirmed how we use this.
+                 navigate = function(type, data, mine) {
+                     // Helpful console message when calling navigate function.
+                     var someMine = mine ? "on ".concat(mine) : null;
+                     var msg = ["Navigating to", type, someMine, "with data:"]
+                         .filter(function(e) { return e }) // remove falsy elements
+                         .join(" ");
+                     console.log(msg, data);
+                 };
+    	     // THIS LINE IS THE IMPORTANT BIT. YOU SHOULDN'T NEED TO EDIT IT
+    	     // the method signature should match the signature in src/index.js
+    	     $.ajax('config.json').then(function(config) {
+    		 bluegenesGWASResultVisualizer.main(
+    		     elem,
+                     imURL,
+                     dataToInitialiseToolWith,
+                     toolState,
+                     config,
+                     navigate
+                 );
+    	     });
+         };
+        </script>
+        <script src="dist/bundle.js"></script>
     </body>
 </html>
